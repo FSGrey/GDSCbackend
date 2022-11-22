@@ -9,13 +9,13 @@ import api from "./api.js"
  * DO NOT TAMPER WITH THIS FUNCTION !!
  */
 function setup() {
-  // api.getCards()
-  //   .then(cards => {
-  //     cards.forEach(card => {
-  //       const container = document.querySelector(`[data-category=${card.category}]`)
-  //       handlers.addExistingCard(container, card)
-  //     })
-  //   }).catch(console.error)
+  api.getCards()
+    .then(cards => {
+      cards.forEach(card => {
+        const container = document.querySelector(`[data-category=${card.category}]`)
+        handlers.addExistingCard(container, card)
+      })
+    }).catch(console.error)
 
   const cards = document.querySelectorAll(".card")
   cards.forEach(card => {
